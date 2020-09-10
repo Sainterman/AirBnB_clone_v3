@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+""" API index template routing"""
 from api.v1.views import app_views
 from flask import jsonify
 from models import storage
@@ -14,10 +15,12 @@ from models.user import User
 classes = {"amenities": Amenity, "cities": City,
            "places": Place, "reviews": Review, "states": State, "users": User}
 
+
 @app_views.route('/status')
 def status():
     """Return status"""
     return jsonify({"status": "OK"})
+
 
 @app_views.route('/stats')
 def stats():
