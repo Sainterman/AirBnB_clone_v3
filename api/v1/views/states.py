@@ -5,7 +5,7 @@ from models.state import State
 from flask import request, jsonify
 
 
-@app_views.route('/states', methods=('GET', 'POST'),strict_slashes=False)
+@app_views.route('/states', methods=('GET', 'POST'), strict_slashes=False)
 def states():
     """Handle GET and POST methods"""
     if request.method == 'GET':
@@ -21,9 +21,10 @@ def states():
         storage.new(newState)
         storage.save()
         return jsonify(newState.to_dict()), 201
-        
 
-@app_views.route('/states/<state_id>',methods=('GET', 'PUT', 'DELETE'), strict_slashes=False)
+
+@app_views.route('/states/<state_id>',
+                 methods=('GET', 'PUT', 'DELETE'), strict_slashes=False)
 def stateId(state_id=None):
     """display the states and cities listed in alphabetical order"""
     if state_id is not None:
