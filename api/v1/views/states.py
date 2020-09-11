@@ -1,4 +1,7 @@
 #!/usr/bin/python3
+"""Create Routing for  states using app_views template,
+ create update get and delete
+ """
 from api.v1.views import app_views
 from models import storage
 from models.state import State
